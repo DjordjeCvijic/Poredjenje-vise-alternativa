@@ -11,10 +11,11 @@ import java.io.File;
 public class Main extends Application {
 
 
-
+    public static Stage stage;
     @Override
     public void start(Stage primaryStage) throws Exception{
 
+        stage=primaryStage;
         Table table=new Table();
 
         Parent root = FXMLLoader.load(getClass().getResource(".."+ File.separator+"view"+File.separator+"tableScena.fxml"));

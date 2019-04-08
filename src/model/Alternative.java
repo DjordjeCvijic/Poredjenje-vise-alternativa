@@ -2,19 +2,31 @@ package model;
 
 public class Alternative {
 
-   private int numOfAlternative;
-    private int numOfMeasurements=0;
-    private float [] scores;
-    private float avrValueOfColumn=0;
-    private float [] errorsInMeasurements;
+    private int numOfAlternative;
+    private int numOfMeasurements = 0;
+    private float[] scores;
+    private float avrValueOfColumn = 0;
+    private float[] errorsInMeasurements;
 
 
-    public Alternative(int n){
-        numOfAlternative=n;
+    public Alternative(int n) {
+        numOfAlternative = n;
 
     }
 
-     void setNumOfMeasurements(int n){
+    public int getNumOfMeasurements() {
+        return numOfMeasurements;
+    }
+
+    public float getErrorInMeasurements(int i) {
+            return errorsInMeasurements[i];
+    }
+
+    public float getAvrValueOfColumn() {
+        return avrValueOfColumn;
+    }
+
+    void setNumOfMeasurements(int n){
         numOfMeasurements=n;
     }
     public  void setScores(String sc){
@@ -45,6 +57,16 @@ public class Alternative {
     public  boolean isEmpty(){
         if(numOfMeasurements==0)return true;
         return false;
+    }
+    public float sumInColumn(){
+        float s=0;
+        for(int i=0;i<numOfMeasurements;i++)
+            s+=scores[i];
+        return s;
+    }
+    public void allErrors(){
+        for(int i=0;i<numOfMeasurements;i++)
+            System.out.println(errorsInMeasurements[i]+" ");
     }
 
 
