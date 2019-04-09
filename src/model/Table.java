@@ -9,11 +9,15 @@ public class Table {
     public static Alternative [] alternatives;
     public static float[] effects;
     public static float avrVelueOfTable=0;
-    public static float sse;
-    public static float ssa;
-    public static float sst;
+    public static float sse=0;
+    public static float ssa=0;
+    public static float sst=0;
+    public static double fValueCalculated;
 
     public Table(){}
+    public static int getNumOfAlternatives(){
+        return numOfAlternatives;
+    }
 
     public static void setTable(int n){
         numOfAlternatives=n;
@@ -46,11 +50,17 @@ public class Table {
 
         for(int i=0;i<numOfAlternatives;i++)
             ssa+= Math.pow(effects[i],2);
-        ssa*=Table.alternatives[0].getNumOfMeasurements();
+          ssa*=Table.alternatives[0].getNumOfMeasurements();
 
 
 
+        for(int i=0;i<numOfAlternatives;i++) {
+            for (int j = 0; j < Table.alternatives[i].getNumOfMeasurements(); j++) {
+                sst+=Math.pow(avrVelueOfTable-Table.alternatives[i].getMeasurement(j),2);
+            }
+        }
 
+        fValueCalculated=((ssa/numOfAlternatives-1)/(sse/(numOfAlternatives*(alternatives[0].getNumOfMeasurements()-1))));
 
 
         System.out.println("apsolutne vijrenosti po kolonama:");
@@ -68,6 +78,8 @@ public class Table {
         System.out.println("efekti:");
         for(int i=0;i<numOfAlternatives;i++)
             System.out.println(effects[i]+" ");
+
+        System.out.println(ssa+" "+sse+"="+sst);
 
 
     }

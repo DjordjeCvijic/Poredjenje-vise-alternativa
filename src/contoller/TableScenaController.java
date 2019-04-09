@@ -29,6 +29,7 @@ public class TableScenaController {
         int i=1;
         while(i<=Integer.parseInt(NumberOfAlterntives.getText()))
             AlternativeToChoose.getItems().add(i++);
+        AlternativeToChoose.getSelectionModel().selectFirst();
 
 
 
@@ -57,7 +58,7 @@ public class TableScenaController {
 
         try {
 
-            Parent root = FXMLLoader.load(getClass().getResource(".." + File.separator + "view" + File.separator + "finaleScene     .fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource(".." + File.separator + "view" + File.separator + "finaleScene.fxml"));
             Main.stage.setTitle("Final results");
             Main.stage.setScene(new Scene(root));
             Main.stage.show();

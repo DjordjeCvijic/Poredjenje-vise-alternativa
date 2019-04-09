@@ -14,12 +14,18 @@ public class Alternative {
 
     }
 
+    public int getNumOfAlternative(){
+        return numOfAlternative;
+    }
     public int getNumOfMeasurements() {
         return numOfMeasurements;
     }
 
     public float getErrorInMeasurements(int i) {
             return errorsInMeasurements[i];
+    }
+    public float getMeasurement(int i){
+        return scores[i];
     }
 
     public float getAvrValueOfColumn() {
