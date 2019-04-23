@@ -60,26 +60,7 @@ public class Table {
             }
         }
 
-        fValueCalculated=((ssa/numOfAlternatives-1)/(sse/(numOfAlternatives*(alternatives[0].getNumOfMeasurements()-1))));
-
-
-        System.out.println("apsolutne vijrenosti po kolonama:");
-        for(int i=0;i<numOfAlternatives;i++)
-            System.out.println( alternatives[i].getAvrValueOfColumn()+" ");
-
-        System.out.println("greske u kolonama su:");
-        for(int i=0;i<numOfAlternatives;i++)
-            alternatives[i].allErrors();
-
-
-        System.out.println("srednja vrijednost sistema:");
-        System.out.println(avrVelueOfTable);
-
-        System.out.println("efekti:");
-        for(int i=0;i<numOfAlternatives;i++)
-            System.out.println(effects[i]+" ");
-
-        System.out.println(ssa+" "+sse+"="+sst);
+        fValueCalculated=((ssa/(numOfAlternatives-1))/(sse/(numOfAlternatives*(alternatives[0].getNumOfMeasurements()-1))));
 
 
     }

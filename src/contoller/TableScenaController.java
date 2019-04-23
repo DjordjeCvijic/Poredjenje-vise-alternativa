@@ -40,7 +40,7 @@ public class TableScenaController {
 
 
         Table.alternatives[AlternativeToChoose.getValue()-1].setScores(FieldForMeasurements.getText());
-        //System.out.println( Table.alternatives[AlternativeToChoose.getValue()-1].print());
+
     }
 
     public void AlternativeToChooseClick(ActionEvent actionEvent) {

@@ -19,7 +19,7 @@ public class Main extends Application {
         Table table=new Table();
 
         Parent root = FXMLLoader.load(getClass().getResource(".."+ File.separator+"view"+File.separator+"tableScena.fxml"));
-        primaryStage.setTitle("Hello World");
+        primaryStage.setTitle("ANOVA");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
     }
